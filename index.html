@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silvia Chen · AI Projects</title>
+<meta name="description" content="Projects Silvia Chen has built with AI.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#3b3552; --muted:#6b6482; --plum:#8e5a9e; --pink:#e98bb0; --lilac:#e6d8ff; --soft:#f6efff;
+    --line:#5b4b7a; --shadow:#d8c6f5;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:var(--ink);font:17px/1.65 Nunito,system-ui,sans-serif;
+       background:linear-gradient(160deg,#fdeaf1 0%,#f1ecff 50%,#e9f5ff 100%) fixed;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+
+  header{padding:80px 0 44px}
+  .hello{display:inline-block;background:#fff;border:1.5px solid var(--line);border-radius:999px;
+         padding:4px 14px;font-weight:700;font-size:14px;color:var(--plum);box-shadow:3px 3px 0 var(--shadow)}
+  h1{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(40px,7.5vw,72px);line-height:1.05;
+     letter-spacing:0;margin:22px 0 18px}
+  h1 .hl{display:inline-block;background:var(--pink);color:#fff;padding:0 14px;border-radius:16px;
+         transform:rotate(-2.5deg);border:1.5px solid var(--line);box-shadow:5px 5px 0 var(--shadow)}
+  .intro{max-width:580px;color:var(--muted);font-size:19px;margin:0}
+  .links{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .pill{display:inline-block;background:#fff;color:var(--ink);text-decoration:none;font-weight:700;
+        border:1.5px solid var(--line);border-radius:999px;padding:7px 18px;box-shadow:3px 3px 0 var(--shadow);
+        transition:transform .15s, box-shadow .15s}
+  .pill:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--shadow)}
+
+  h2{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:32px;margin:28px 0 22px}
+  h2 span{background:var(--lilac);padding:0 12px 2px;border-radius:12px;display:inline-block;transform:rotate(-1.5deg)}
+
+  .project{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;
+           box-shadow:10px 10px 0 var(--shadow);display:grid;grid-template-columns:1fr;margin-bottom:40px}
+  @media (min-width:760px){ .project{grid-template-columns:1fr 1fr} }
+  .media{padding:16px;background:#fff}
+  .media video{display:block;width:100%;height:100%;min-height:260px;max-height:440px;object-fit:cover;
+               border-radius:20px;background:#fff}
+  .body{padding:26px 28px 30px}
+  .body h3{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:34px;margin:0}
+  .tagline{color:var(--plum);font-style:italic;font-weight:700;margin:0 0 14px}
+  .body p{margin:0 0 12px}
+  .box{background:var(--soft);border-radius:16px;padding:12px 16px;margin:12px 0}
+  .box b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--plum)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+  .chips span{background:var(--soft);color:var(--plum);border:1px solid var(--lilac);border-radius:999px;
+              padding:3px 12px;font-size:14px;font-weight:700}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;border:1.5px solid var(--line);border-radius:999px;
+       padding:9px 20px;box-shadow:4px 4px 0 var(--shadow);transition:transform .15s, box-shadow .15s}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--shadow)}
+  .btn.primary{background:var(--plum);color:#fff}
+  .btn.ghost{background:#fff;color:var(--ink)}
+
+  .soon{border:1.5px dashed var(--line);border-radius:28px;padding:30px;text-align:center;font-weight:700;
+        color:var(--muted);background:#ffffff99}
+  footer{padding:56px 0 64px;color:var(--muted);font-size:15px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="hello">✿ Hi, I'm Silvia Chen</span>
+    <h1>I make <span class="hl">lovely things</span><br>with AI</h1>
+    <p class="intro">A collection of things I've designed and shipped using AI tools — from idea and prompts to a working product anyone can open in a browser.</p>
+    <div class="links">
+      <a class="pill" href="https://github.com/silvia22-taiwan">GitHub</a>
+      <!-- Add LinkedIn / email here -->
+    </div>
+  </header>
+
+  <h2><span>Projects</span></h2>
+
+  <article class="project">
+    <div class="media">
+      <video src="https://silvia22-taiwan.github.io/flora/videos/rose.mp4"
+             autoplay muted loop playsinline preload="metadata" aria-label="A rose blooming in Flora"></video>
+    </div>
+    <div class="body">
+      <h3>Flora 🌹</h3>
+      <p class="tagline">Every bloom waits for an open hand.</p>
+      <p>An interactive flower website you control with your hand. Open your palm and the flower blooms; close your fist and it folds back into a bud; wave to switch to the next flower.</p>
+      <div class="box"><b>How it works</b>Hand tracking runs entirely in the visitor's browser with MediaPipe, so the camera feed never leaves their device. No camera? A slider, scroll wheel, or arrow keys work too.</div>
+      <div class="box"><b>How I used AI</b>Built the site with Claude Code, and generated each blooming time-lapse with AI video tools using a first-frame / last-frame method (bud → full bloom) for consistent, realistic motion.</div>
+      <div class="chips">
+        <span>Claude Code</span><span>AI video</span><span>MediaPipe</span><span>JavaScript</span>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="https://silvia22-taiwan.github.io/flora/">Try it live →</a>
+        <a class="btn ghost" href="https://github.com/silvia22-taiwan/flora">View code</a>
+      </div>
+    </div>
+  </article>
+
+  <div class="soon">More projects blooming soon ✿</div>
+
+  <footer>© 2026 Silvia Chen · Built with Claude Code</footer>
+</div>
+</body>
+</html>
