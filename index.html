@@ -66,6 +66,23 @@
   .three h3{font-family:"Archivo Black";font-weight:400;text-transform:uppercase;font-size:19px;margin:8px 0 6px}
   .three p{margin:0;color:var(--muted)}
 
+  /* story */
+  .story{padding:30px 32px;margin-top:28px;display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:820px){ .story{grid-template-columns:.8fr 1.2fr;align-items:center} }
+  .story .big{font-family:"Archivo Black";text-transform:uppercase;font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:6px 0 0}
+  .story .big em{font-style:normal;color:var(--plum)}
+  .story p{margin:0 0 12px}
+  .story p:last-child{margin:0}
+  .stories{display:grid;grid-template-columns:1fr;gap:22px}
+  @media(min-width:760px){ .stories{grid-template-columns:1fr 1fr} }
+  .tale{padding:24px 24px 22px;display:flex;flex-direction:column}
+  .tale .where{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--plum)}
+  .tale h3{font-size:20px;line-height:1.3;margin:6px 0 10px}
+  .tale p{margin:0 0 14px;color:var(--muted);font-size:16px;flex:1}
+  .tale .res{align-self:flex-start;background:var(--soft);border-radius:999px;padding:4px 12px;font-weight:800;font-size:14px;color:var(--plum)}
+  .funfact{margin-top:14px;background:var(--soft);border-radius:14px;padding:12px 14px;font-size:15px}
+  .funfact b{color:var(--plum)}
+
   /* timeline */
   .timeline{display:flex;gap:14px;overflow-x:auto;padding:6px 4px 18px;scroll-snap-type:x mandatory}
   .step{flex:0 0 170px;scroll-snap-align:start;background:#fff;border:1.5px solid var(--line);border-radius:18px;
@@ -187,6 +204,18 @@
       <div class="card"><div class="icon">🚀</div><h3>I ship across silos</h3>
         <p>Sales, stores, legal, finance, IT — I get them moving in one direction at Tesla, LEGO, and P&amp;G, then measure what changed.</p></div>
     </div>
+
+    <div class="card story">
+      <div>
+        <div class="eyebrow">My story</div>
+        <p class="big">The problem is rarely the product. It’s <em>the system around it.</em></p>
+      </div>
+      <div>
+        <p>I started at P&amp;G fresh out of college, leading a 40-person field sales team where I was one of the youngest in the room. That’s where I learned how customers actually decide — at the shelf, in the moment.</p>
+        <p>At LEGO I got closer still: building stores people could see, touch, and play in, including the first flagship in my hometown. At Tesla, I found growth hiding in plain sight — not in the product, but in how teams were measured.</p>
+        <p>Now AI lets me take one more step. Instead of only asking <i>how</i> to solve a problem, I ask: <b>“Can I build something to solve it?”</b></p>
+      </div>
+    </div>
   </section>
 
   <section id="journey">
@@ -223,8 +252,8 @@
   <!-- LEGO -->
   <article class="card chapter flip">
     <div class="photo gallery">
-      <figure class="main" style="margin:0"><img id="legoMain" src="images/lego-flagship-1.jpg" alt="LEGO flagship store entrance"><figcaption id="legoCap">Flagship store opening</figcaption></figure>
-      <div class="thumbs" id="legoThumbs">
+      <figure class="main" style="margin:0"><img class="gmain" src="images/lego-flagship-1.jpg" alt="LEGO flagship store entrance"><figcaption class="gcap">Flagship store opening</figcaption></figure>
+      <div class="thumbs">
         <button aria-pressed="true" data-cap="Flagship store opening"><img src="images/lego-flagship-1.jpg" alt="Flagship store entrance"></button>
         <button aria-pressed="false" data-cap="Inside the flagship store"><img src="images/lego-flagship-2.jpg" alt="Inside the flagship store"></button>
         <button aria-pressed="false" data-cap="Flagship store opening"><img src="images/lego-flagship-3.jpg" alt="Another flagship store entrance"></button>
@@ -248,7 +277,7 @@
 
   <!-- Angible -->
   <article class="card chapter nophoto">
-        <div class="txt">
+    <div class="txt">
       <div class="eyebrow">Summer 2025</div>
       <div class="co">Angible</div>
       <p class="role">Strategy Pre-MBA Intern · seed-stage AI startup building computer-vision checkout for CPG &amp; retail</p>
@@ -263,8 +292,15 @@
   </article>
 
   <!-- Tesla -->
-  <article class="card chapter nophoto">
-        <div class="txt">
+  <article class="card chapter flip">
+    <div class="photo gallery">
+      <figure class="main" style="margin:0"><img class="gmain" src="images/tesla-1.jpg" alt="Silvia in front of the Tesla logo" style="object-position:70% 62%"><figcaption class="gcap">Summer 2026 at Tesla</figcaption></figure>
+      <div class="thumbs">
+        <button aria-pressed="true" data-cap="Summer 2026 at Tesla"><img src="images/tesla-1.jpg" alt="Silvia in front of the Tesla logo" style="object-position:70% 62%"></button>
+        <button aria-pressed="false" data-cap="With the intern cohort, New York"><img src="images/tesla-2.jpg" alt="Tesla intern cohort around a Cybertruck"></button>
+      </div>
+    </div>
+    <div class="txt">
       <div class="eyebrow">Summer 2026</div>
       <div class="co">Tesla</div>
       <p class="role">Program Manager Intern, Sales &amp; Delivery · New York</p>
@@ -283,8 +319,9 @@
   </article>
 
   <!-- Wharton -->
-  <article class="card chapter nophoto">
-        <div class="txt">
+  <article class="card chapter">
+    <figure class="photo" style="margin:0"><img src="images/wharton-2.jpg" alt="Silvia with Wharton classmates on campus" style="object-position:center 70%"><figcaption>With classmates at Wharton</figcaption></figure>
+    <div class="txt">
       <div class="eyebrow">2025–2027</div>
       <div class="co">The Wharton School</div>
       <p class="role">MBA, major in AI &amp; Operations, Information, and Decisions · Joseph Wharton Fellow</p>
@@ -297,6 +334,38 @@
       </ul>
     </div>
   </article>
+
+  <!-- ============ STORIES ============ -->
+  <section id="stories">
+    <div class="eyebrow">Stories behind the numbers</div>
+    <h2 class="display"><span>The moments I’m proudest of</span></h2>
+    <div class="stories">
+      <article class="card tale"><div class="where">LEGO · Taiwan</div>
+        <h3>I proposed something LEGO had never done. Leadership said no.</h3>
+        <p>Our store operator was hurting the customer experience, but replacing them meant risking stores worth ~30% of revenue. I spent a year rebuilding the case — growth model, risk scenarios, a vetted new partner — and came back. This time: yes.</p>
+        <span class="res">24% CAGR · became a LEGO best practice</span></article>
+      <article class="card tale"><div class="where">LEGO · Hometown flagship</div>
+        <h3>A 12-month store launch in 10 months, with no playbook.</h3>
+        <p>I’d never opened a store and the regional launch team had been laid off. So I learned from other markets, shadowed the design team in Denmark, and watched how shoppers moved through department stores.</p>
+        <span class="res">Top-performing APAC store · now the blueprint</span></article>
+      <article class="card tale"><div class="where">LEGO · Tainan opening</div>
+        <h3>Instead of buying ads, we built a museum.</h3>
+        <p>With a tiny budget and a competitor opening next door, I pitched a locally designed LEGO set of Tainan’s iconic museum — something LEGO rarely approves. Customers lined up on opening day.</p>
+        <span class="res">~50% of the usual marketing budget saved</span></article>
+      <article class="card tale"><div class="where">P&amp;G · Herbal Essences</div>
+        <h3>The shampoo people fought over.</h3>
+        <p>A limited Costco launch sold out so fast it made national news — for the wrong reasons. I turned the PR scare into a brand story, without extra ad spend.</p>
+        <span class="res">Sold out · a long-term Costco line, ~5% of P&amp;G Taiwan</span></article>
+      <article class="card tale"><div class="where">P&amp;G · Febreze</div>
+        <h3>Helmets and hotpot.</h3>
+        <p>The global playbook sold Febreze for sofas. I looked at daily life in Taiwan instead: motorcycle helmets in humid weather, clothes after hotpot. New occasions, tested message by message.</p>
+        <span class="res">#1 in its segment in 3 months · 2× online share</span></article>
+      <article class="card tale"><div class="where">P&amp;G · PX-Mart</div>
+        <h3>The data existed. Nobody had time to use it.</h3>
+        <p>Buyers made decisions for 1,000+ stores by region, not by store. I got two IT teams to connect their systems and built a dashboard simple enough that everyone actually used it.</p>
+        <span class="res">−20% expiry returns · 100% adoption</span></article>
+    </div>
+  </section>
 
   <!-- ============ PART 2 · PROJECTS ============ -->
   <section id="projects">
@@ -338,6 +407,25 @@
       </div>
     </article>
 
+    <article class="card project">
+      <div class="media">
+        <div class="agent" aria-hidden="true" style="align-items:center;text-align:center">
+          <div style="font-size:54px">📦</div>
+          <div style="font-family:'Archivo Black';font-size:40px;color:var(--plum);line-height:1">29 scans</div>
+          <div style="font-weight:800">in 1 day, across 5 apartment buildings</div>
+          <div class="bubble" style="max-width:none">≈6% of units — beating our 5% target</div>
+        </div>
+      </div>
+      <div class="body">
+        <h3>Return Valet 📦</h3>
+        <p class="tagline">Returns as easy as dropping a box in your lobby.</p>
+        <p>Online shopping is effortless; returns aren’t. You find a box, print a label, and make a trip. Return Valet lets residents drop returns off in their apartment lobby.</p>
+        <div class="box"><b>How I used AI</b>Built a working app prototype with Base44, an AI app builder — no engineering background needed.</div>
+        <div class="box"><b>How we tested it</b>Put QR-code posters up in five apartment buildings to see if people cared before building more. An encouraging first signal, not proof — so the next step is testing real usage.</div>
+        <div class="chips"><span>Base44</span><span>AI prototyping</span><span>Customer testing</span><span>Team project</span></div>
+      </div>
+    </article>
+
     <div class="card" style="padding:22px 26px">
       <div class="eyebrow">Toolkit</div>
       <div class="chips" style="margin-bottom:0"><span>Claude Code</span><span>SQL</span><span>RAG / LLM evaluation</span><span>GitHub</span><span>Power BI</span></div>
@@ -365,6 +453,7 @@
           <div><span>🎹</span>Top-3 city-level pianist</div>
           <div><span>⚫</span>City champion in Go</div>
         </div>
+        <div class="funfact"><b>Fun fact:</b> five years later, shoppers in Taiwan still remember one of my launches as “the shampoo people fight over.”</div>
       </div>
     </div>
   </section>
@@ -383,12 +472,13 @@
   <footer>© 2026 Silvia Chen · Built with Claude Code</footer>
 </div>
 <script>
-  document.querySelectorAll('#legoThumbs button').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('#legoThumbs button').forEach(x=>x.setAttribute('aria-pressed','false'));
-    b.setAttribute('aria-pressed','true');
-    const img=b.querySelector('img');
-    legoMain.src=img.src; legoMain.alt=img.alt; legoCap.textContent=b.dataset.cap;
-  }));
+  document.querySelectorAll('.gallery').forEach(g=>{
+    const main=g.querySelector('.gmain'), cap=g.querySelector('.gcap'), bs=g.querySelectorAll('.thumbs button');
+    bs.forEach(b=>b.addEventListener('click',()=>{
+      bs.forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true');
+      const img=b.querySelector('img'); main.src=img.src; main.alt=img.alt; main.style.objectPosition=img.style.objectPosition||''; cap.textContent=b.dataset.cap;
+    }));
+  });
 </script>
 </body>
 </html>
