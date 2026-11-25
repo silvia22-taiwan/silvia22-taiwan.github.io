@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Silvia Chen · AI Projects</title>
-<meta name="description" content="Projects Silvia Chen has built with AI.">
+<title>Silvia Chen · Portfolio</title>
+<meta name="description" content="Silvia Chen — Wharton MBA '27 (AI & OIDD). Turning customer problems into measurable growth, from consumer goods to AI.">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -12,92 +12,384 @@
     --line:#5b4b7a; --shadow:#d8c6f5;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{margin:0;color:var(--ink);font:17px/1.65 Nunito,system-ui,sans-serif;
        background:linear-gradient(160deg,#fdeaf1 0%,#f1ecff 50%,#e9f5ff 100%) fixed;}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+  img{max-width:100%;display:block}
 
-  header{padding:80px 0 44px}
-  .hello{display:inline-block;background:#fff;border:1.5px solid var(--line);border-radius:999px;
-         padding:4px 14px;font-weight:700;font-size:14px;color:var(--plum);box-shadow:3px 3px 0 var(--shadow)}
-  h1{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(40px,7.5vw,72px);line-height:1.05;
-     letter-spacing:0;margin:22px 0 18px}
-  h1 .hl{display:inline-block;background:var(--pink);color:#fff;padding:0 14px;border-radius:16px;
-         transform:rotate(-2.5deg);border:1.5px solid var(--line);box-shadow:5px 5px 0 var(--shadow)}
-  .intro{max-width:580px;color:var(--muted);font-size:19px;margin:0}
-  .links{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:#fbf6ffcc;backdrop-filter:blur(10px);border-bottom:1px solid #e9def9}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:12px}
+  nav .logo{font-family:"Archivo Black",sans-serif;text-decoration:none;color:var(--ink);font-size:18px}
+  nav .menu{display:flex;gap:18px;flex-wrap:wrap}
+  nav .menu a{color:var(--ink);text-decoration:none;font-weight:700;font-size:15px}
+  nav .menu a:hover{color:var(--plum)}
+  @media(max-width:560px){ nav .menu a:nth-child(n+3){display:none} }
+
+  /* shared */
+  .display{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;line-height:1.05}
+  .hl{display:inline-block;background:var(--pink);color:#fff;padding:0 14px;border-radius:16px;
+      transform:rotate(-2.5deg);border:1.5px solid var(--line);box-shadow:5px 5px 0 var(--shadow)}
+  .eyebrow{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--plum)}
+  section{padding:64px 0 16px;scroll-margin-top:60px}
+  .part{display:flex;align-items:baseline;gap:14px;margin:0 0 8px}
+  .part .num{font-family:"Archivo Black";font-size:15px;background:#fff;border:1.5px solid var(--line);
+             border-radius:999px;padding:2px 12px;box-shadow:3px 3px 0 var(--shadow)}
+  h2{font-size:clamp(30px,5vw,44px);margin:6px 0 26px}
+  h2 span{background:var(--lilac);padding:0 12px 2px;border-radius:12px;display:inline-block;transform:rotate(-1.5deg)}
+  .card{background:#fff;border:1.5px solid var(--line);border-radius:24px;box-shadow:8px 8px 0 var(--shadow)}
   .pill{display:inline-block;background:#fff;color:var(--ink);text-decoration:none;font-weight:700;
         border:1.5px solid var(--line);border-radius:999px;padding:7px 18px;box-shadow:3px 3px 0 var(--shadow);
         transition:transform .15s, box-shadow .15s}
   .pill:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--shadow)}
+  .pill.primary{background:var(--plum);color:#fff}
 
-  h2{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:32px;margin:28px 0 22px}
-  h2 span{background:var(--lilac);padding:0 12px 2px;border-radius:12px;display:inline-block;transform:rotate(-1.5deg)}
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;padding:56px 0 24px}
+  @media(min-width:820px){ .hero{grid-template-columns:1.35fr 1fr} }
+  .hero h1{font-size:clamp(36px,6.4vw,64px);margin:16px 0 20px}
+  .hero .sub{color:var(--muted);font-size:19px;margin:0 0 6px;max-width:560px}
+  .hero .meta{font-weight:800;margin:0 0 24px}
+  .hero .links{display:flex;gap:12px;flex-wrap:wrap}
+  .portrait{position:relative;max-width:360px;margin:0 auto}
+  .portrait img{border-radius:28px;border:1.5px solid var(--line);box-shadow:12px 12px 0 var(--shadow);
+                transform:rotate(2deg);aspect-ratio:4/5;object-fit:cover;object-position:center 30%}
+  .portrait .tag{position:absolute;left:-14px;bottom:28px;background:#fff;border:1.5px solid var(--line);
+                 border-radius:999px;padding:6px 14px;font-weight:800;font-size:14px;box-shadow:3px 3px 0 var(--shadow);transform:rotate(-4deg)}
 
-  .project{background:#fff;border:1.5px solid var(--line);border-radius:28px;overflow:hidden;
-           box-shadow:10px 10px 0 var(--shadow);display:grid;grid-template-columns:1fr;margin-bottom:40px}
-  @media (min-width:760px){ .project{grid-template-columns:1fr 1fr} }
-  .media{padding:16px;background:#fff}
-  .media video{display:block;width:100%;height:100%;min-height:260px;max-height:440px;object-fit:cover;
-               border-radius:20px;background:#fff}
-  .body{padding:26px 28px 30px}
-  .body h3{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:34px;margin:0}
-  .tagline{color:var(--plum);font-style:italic;font-weight:700;margin:0 0 14px}
-  .body p{margin:0 0 12px}
+  /* strengths */
+  .three{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:760px){ .three{grid-template-columns:repeat(3,1fr)} }
+  .three .card{padding:24px}
+  .three .icon{font-size:28px}
+  .three h3{font-family:"Archivo Black";font-weight:400;text-transform:uppercase;font-size:19px;margin:8px 0 6px}
+  .three p{margin:0;color:var(--muted)}
+
+  /* timeline */
+  .timeline{display:flex;gap:14px;overflow-x:auto;padding:6px 4px 18px;scroll-snap-type:x mandatory}
+  .step{flex:0 0 170px;scroll-snap-align:start;background:#fff;border:1.5px solid var(--line);border-radius:18px;
+        padding:14px 16px;box-shadow:4px 4px 0 var(--shadow)}
+  .step .yr{font-weight:800;color:var(--plum);font-size:14px}
+  .step b{display:block;font-size:16px;margin:2px 0}
+  .step span{font-size:14px;color:var(--muted);line-height:1.4;display:block}
+  .step.now{background:var(--soft)}
+
+  /* chapters */
+  .chapter{display:grid;grid-template-columns:1fr;gap:0;overflow:hidden;margin-bottom:34px}
+  @media(min-width:820px){ .chapter{grid-template-columns:1fr 1.25fr} .chapter.flip .photo{order:2} }
+  .photo{position:relative;min-height:240px;background:var(--soft);display:flex;align-items:center;justify-content:center}
+  .photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  .photo .ph{border:1.5px dashed var(--line);border-radius:16px;padding:18px 22px;text-align:center;color:var(--muted);font-weight:700;margin:20px}
+  .chapter.nophoto{grid-template-columns:1fr}
+  .chapter .txt{padding:26px 28px 28px}
+  .photo figcaption{position:absolute;left:14px;bottom:14px;background:#fff;border:1.5px solid var(--line);border-radius:999px;
+                    padding:3px 12px;font-size:13px;font-weight:800;box-shadow:3px 3px 0 var(--shadow)}
+  .photo.gallery{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;background:var(--soft)}
+  .gallery .main{position:relative;flex:1 0 260px}
+  .gallery .main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .thumbs{flex:0 0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:10px}
+  .thumbs button{padding:0;border:1.5px solid transparent;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:none}
+  .thumbs button img{position:static;width:100%;height:100%;object-fit:cover}
+  .thumbs button[aria-pressed="true"]{border-color:var(--line);box-shadow:2px 2px 0 var(--shadow)}
+  .chapter .co{font-family:"Archivo Black";text-transform:uppercase;font-size:26px;margin:4px 0 2px}
+  .chapter .role{color:var(--muted);font-weight:700;margin:0 0 12px;font-size:15px}
+  .quote{font-size:20px;font-weight:800;line-height:1.35;margin:0 0 18px}
+  .quote::before{content:"“";color:var(--pink);font-family:"Archivo Black";font-size:34px;line-height:0;vertical-align:-10px;margin-right:4px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .stat{background:var(--soft);border-radius:16px;padding:12px 14px}
+  .stat .n{font-family:"Archivo Black";font-size:26px;color:var(--plum);line-height:1.1}
+  .stat .l{font-size:14px;color:var(--muted);line-height:1.4}
+  .steps4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+  .steps4 div{background:var(--soft);border-radius:14px;padding:10px 12px;font-size:14px;line-height:1.4}
+  .steps4 b{display:block;color:var(--plum)}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+  .ba div{border:1.5px dashed var(--line);border-radius:14px;padding:10px 12px;font-size:14px;line-height:1.4}
+  .ba div:last-child{border-style:solid;background:var(--soft)}
+  .ba b{display:block;font-size:12px;letter-spacing:.1em;color:var(--plum)}
+  .list{margin:0;padding-left:20px}
+  .list li{margin-bottom:6px}
+
+  /* projects */
+  .project{display:grid;grid-template-columns:1fr;overflow:hidden;margin-bottom:34px}
+  @media(min-width:820px){ .project{grid-template-columns:1fr 1fr} }
+  .project .media{padding:16px}
+  .project video{display:block;width:100%;height:100%;min-height:260px;max-height:440px;object-fit:cover;border-radius:18px;background:#fff}
+  .project .agent{min-height:260px;height:100%;border-radius:18px;background:var(--soft);padding:22px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+  .bubble{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:10px 14px;font-size:15px;max-width:85%}
+  .bubble.me{align-self:flex-end;background:var(--plum);color:#fff;border-color:var(--plum)}
+  .project .body{padding:24px 28px 28px}
+  .project h3{font-family:"Archivo Black";font-weight:400;text-transform:uppercase;font-size:30px;margin:0}
+  .tagline{color:var(--plum);font-style:italic;font-weight:700;margin:0 0 12px}
+  .project p{margin:0 0 12px}
   .box{background:var(--soft);border-radius:16px;padding:12px 16px;margin:12px 0}
   .box b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--plum)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
-  .chips span{background:var(--soft);color:var(--plum);border:1px solid var(--lilac);border-radius:999px;
-              padding:3px 12px;font-size:14px;font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
+  .chips span{background:var(--soft);color:var(--plum);border:1px solid var(--lilac);border-radius:999px;padding:3px 12px;font-size:14px;font-weight:700}
   .btns{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-block;text-decoration:none;font-weight:700;border:1.5px solid var(--line);border-radius:999px;
-       padding:9px 20px;box-shadow:4px 4px 0 var(--shadow);transition:transform .15s, box-shadow .15s}
-  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--shadow)}
-  .btn.primary{background:var(--plum);color:#fff}
-  .btn.ghost{background:#fff;color:var(--ink)}
 
-  .soon{border:1.5px dashed var(--line);border-radius:28px;padding:30px;text-align:center;font-weight:700;
-        color:var(--muted);background:#ffffff99}
-  footer{padding:56px 0 64px;color:var(--muted);font-size:15px;text-align:center}
+  /* beyond */
+  .beyond{display:grid;grid-template-columns:1fr;gap:22px}
+  @media(min-width:760px){ .beyond{grid-template-columns:1.2fr 1fr} }
+  .beyond .card{padding:24px}
+  .beyond h3{font-family:"Archivo Black";font-weight:400;text-transform:uppercase;font-size:18px;margin:0 0 12px}
+  .fun{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .fun div{background:var(--soft);border-radius:14px;padding:12px;font-weight:700;font-size:15px}
+  .fun div span{display:block;font-size:24px}
+
+  /* contact */
+  .contact{text-align:center;padding:72px 24px;margin:40px 0 24px}
+  .contact h2{margin-bottom:14px}
+  .contact p{color:var(--muted);margin:0 0 22px}
+  .contact .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  footer{padding:24px 0 48px;color:var(--muted);font-size:14px;text-align:center}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <span class="hello">✿ Hi, I'm Silvia Chen</span>
-    <h1>I make <span class="hl">lovely things</span><br>with AI</h1>
-    <p class="intro">A collection of things I've designed and shipped using AI tools — from idea and prompts to a working product anyone can open in a browser.</p>
-    <div class="links">
-      <a class="pill" href="https://github.com/silvia22-taiwan">GitHub</a>
-      <!-- Add LinkedIn / email here -->
+
+<nav><div class="wrap">
+  <a class="logo" href="#top">SILVIA CHEN</a>
+  <div class="menu">
+    <a href="#about">About</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<div class="wrap" id="top">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Wharton MBA ’27 · AI &amp; OIDD</div>
+      <h1 class="display">I turn messy customer problems into <span class="hl">measurable growth</span></h1>
+      <p class="sub">From consumer goods to AI — a decade of operating at P&amp;G and LEGO, now building AI products hands-on.</p>
+      <p class="meta">📍 Philadelphia, PA</p>
+      <div class="links">
+        <a class="pill primary" href="https://www.linkedin.com/in/silviaylchen">LinkedIn</a>
+        <a class="pill" href="mailto:silvia22@wharton.upenn.edu">Email me</a>
+        <a class="pill" href="#projects">See my AI projects ↓</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="images/silvia.jpg" alt="Portrait of Silvia Chen">
+      <div class="tag">✿ Hi, I'm Silvia (Yi-Lun)</div>
     </div>
   </header>
 
-  <h2><span>Projects</span></h2>
-
-  <article class="project">
-    <div class="media">
-      <video src="https://silvia22-taiwan.github.io/flora/videos/rose.mp4"
-             autoplay muted loop playsinline preload="metadata" aria-label="A rose blooming in Flora"></video>
+  <!-- ============ PART 1 · ABOUT ============ -->
+  <section id="about">
+    <div class="part"><span class="num">PART 01</span><span class="eyebrow">Who I am</span></div>
+    <h2 class="display"><span>About me</span></h2>
+    <div class="three">
+      <div class="card"><div class="icon">🛒</div><h3>Operating depth</h3>
+        <p>~10 years in consumer goods and retail at P&amp;G and LEGO — brand, go-to-market, channel, and supply chain.</p></div>
+      <div class="card"><div class="icon">🤖</div><h3>AI product fluency</h3>
+        <p>Shaped an AI computer-vision roadmap at Angible; builds RAG agents with evaluation sets.</p></div>
+      <div class="card"><div class="icon">🚀</div><h3>Execution at scale</h3>
+        <p>Cross-functional programs at Tesla, LEGO, and P&amp;G — owned through measured outcomes.</p></div>
     </div>
-    <div class="body">
-      <h3>Flora 🌹</h3>
-      <p class="tagline">Every bloom waits for an open hand.</p>
-      <p>An interactive flower website you control with your hand. Open your palm and the flower blooms; close your fist and it folds back into a bud; wave to switch to the next flower.</p>
-      <div class="box"><b>How it works</b>Hand tracking runs entirely in the visitor's browser with MediaPipe, so the camera feed never leaves their device. No camera? A slider, scroll wheel, or arrow keys work too.</div>
-      <div class="box"><b>How I used AI</b>Built the site with Claude Code, and generated each blooming time-lapse with AI video tools using a first-frame / last-frame method (bud → full bloom) for consistent, realistic motion.</div>
-      <div class="chips">
-        <span>Claude Code</span><span>AI video</span><span>MediaPipe</span><span>JavaScript</span>
-      </div>
-      <div class="btns">
-        <a class="btn primary" href="https://silvia22-taiwan.github.io/flora/">Try it live →</a>
-        <a class="btn ghost" href="https://github.com/silvia22-taiwan/flora">View code</a>
+  </section>
+
+  <section id="journey">
+    <div class="eyebrow">Career arc</div>
+    <h2 class="display"><span>A decade of consumer operating, now pointed at AI</span></h2>
+    <div class="timeline">
+      <div class="step"><div class="yr">2012–16</div><b>NCCU</b><span>B.A. International Business · GPA 3.9</span></div>
+      <div class="step"><div class="yr">2016</div><b>P&amp;G · Amart</b><span>Account Manager → Senior (fast-track)</span></div>
+      <div class="step"><div class="yr">2019</div><b>P&amp;G · PX-Mart</b><span>Senior Key Account Manager</span></div>
+      <div class="step"><div class="yr">2021</div><b>P&amp;G Brands</b><span>Sr. Product &amp; GTM Strategy Manager</span></div>
+      <div class="step"><div class="yr">2022–25</div><b>LEGO</b><span>Brand Channel Lead, Taipei</span></div>
+      <div class="step"><div class="yr">2025</div><b>Angible</b><span>Strategy Pre-MBA Intern · AI startup</span></div>
+      <div class="step now"><div class="yr">2025–27</div><b>Wharton</b><span>MBA, AI &amp; OIDD · Joseph Wharton Fellow</span></div>
+      <div class="step now"><div class="yr">2026</div><b>Tesla</b><span>Program Manager Intern, New York</span></div>
+    </div>
+  </section>
+
+  <!-- P&G -->
+  <article class="card chapter">
+    <figure class="photo" style="margin:0"><img src="images/pg-rejoice.jpg" alt="Silvia with Rejoice products in a retail store" style="object-position:60% 40%"><figcaption>In-store with Rejoice</figcaption></figure>
+    <div class="txt">
+      <div class="eyebrow">2016–2022</div>
+      <div class="co">Procter &amp; Gamble</div>
+      <p class="role">Account Manager → Sr. Product &amp; GTM Strategy Manager</p>
+      <p class="quote">I grew brands by pairing shopper data with disciplined execution.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">107%</div><div class="l">of sales target across 10 product launches, leading a 9-person team</div></div>
+        <div class="stat"><div class="n">2×</div><div class="l">online market share in 10 months via A/B-tested pricing, bundles &amp; CRM</div></div>
+        <div class="stat"><div class="n">+5%</div><div class="l">gross margin by repositioning a brand into a growth driver</div></div>
+        <div class="stat"><div class="n">$300K</div><div class="l">annual savings from supply-risk mitigation on an 800+ SKU account</div></div>
       </div>
     </div>
   </article>
 
-  <div class="soon">More projects blooming soon ✿</div>
+  <!-- LEGO -->
+  <article class="card chapter flip">
+    <div class="photo gallery">
+      <figure class="main" style="margin:0"><img id="legoMain" src="images/lego-flagship-1.jpg" alt="LEGO flagship store entrance"><figcaption id="legoCap">Flagship store opening</figcaption></figure>
+      <div class="thumbs" id="legoThumbs">
+        <button aria-pressed="true" data-cap="Flagship store opening"><img src="images/lego-flagship-1.jpg" alt="Flagship store entrance"></button>
+        <button aria-pressed="false" data-cap="Inside the flagship store"><img src="images/lego-flagship-2.jpg" alt="Inside the flagship store"></button>
+        <button aria-pressed="false" data-cap="Flagship store opening"><img src="images/lego-flagship-3.jpg" alt="Another flagship store entrance"></button>
+        <button aria-pressed="false" data-cap="Pop-up store"><img src="images/lego-popup.jpg" alt="LEGO pop-up store with a giant brick truck"></button>
+        <button aria-pressed="false" data-cap="Exclusive Chimei Museum build"><img src="images/lego-exclusive.jpg" alt="Exclusive LEGO model of the Chimei Museum"></button>
+      </div>
+    </div>
+    <div class="txt">
+      <div class="eyebrow">2022–2025</div>
+      <div class="co">LEGO</div>
+      <p class="role">Brand Channel Lead, Taipei</p>
+      <p class="quote">I built the playbook that scaled flagship launches across markets.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">#1</div><div class="l">APAC sales ranking after launching three flagship stores with strategic partners</div></div>
+        <div class="stat"><div class="n">24%</div><div class="l">CAGR, backed by a five-year expansion strategy</div></div>
+        <div class="stat"><div class="n">40%</div><div class="l">faster rollouts with legal, marketing &amp; finance across markets</div></div>
+        <div class="stat"><div class="n">20K</div><div class="l">dormant users reactivated through the flagship store program</div></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Angible -->
+  <article class="card chapter nophoto">
+        <div class="txt">
+      <div class="eyebrow">Summer 2025</div>
+      <div class="co">Angible</div>
+      <p class="role">Strategy Pre-MBA Intern · seed-stage AI startup building computer-vision checkout for CPG &amp; retail</p>
+      <p class="quote">I translated customer pain into an AI product roadmap.</p>
+      <div class="steps4">
+        <div><b>01 Listen</b>Gathered pain points from mid-market and enterprise retailers</div>
+        <div><b>02 Segment</b>Scored use cases on value, feasibility, and deployment complexity</div>
+        <div><b>03 Prioritize</b>Picked the next AI launch to target a $2B whitespace</div>
+        <div><b>04 Specify</b>Turned the top 3 pain points into MVP requirements &amp; data architecture</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Tesla -->
+  <article class="card chapter nophoto">
+        <div class="txt">
+      <div class="eyebrow">Summer 2026</div>
+      <div class="co">Tesla</div>
+      <p class="role">Program Manager Intern, Sales &amp; Delivery · New York</p>
+      <p class="quote">I found the root cause and rebuilt the handoff.</p>
+      <div class="ba">
+        <div><b>BEFORE</b>Subscription performance owned piecemeal across the customer journey</div>
+        <div><b>AFTER</b>One lifecycle model, with teams aligned on a single growth priority</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">20 pt</div><div class="l">performance gap closed in subscription growth</div></div>
+        <div class="stat"><div class="n">100+</div><div class="l">stores analyzed; online orders isolated as the root cause</div></div>
+        <div class="stat"><div class="n">−10%</div><div class="l">lead drop-off with a new online → store → delivery handoff</div></div>
+        <div class="stat"><div class="n">+5%</div><div class="l">customer retention</div></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Wharton -->
+  <article class="card chapter nophoto">
+        <div class="txt">
+      <div class="eyebrow">2025–2027</div>
+      <div class="co">The Wharton School</div>
+      <p class="role">MBA, major in AI &amp; Operations, Information, and Decisions · Joseph Wharton Fellow</p>
+      <p class="quote">Community builder with range.</p>
+      <ul class="list">
+        <li>President, Wharton Taiwan Club</li>
+        <li>Board, Food &amp; Beverage Club</li>
+        <li>Wharton Career Fellow</li>
+        <li>Earlier: founded P&amp;G Taiwan’s first Pro Bono School — 20% of employees supporting 8 NGOs</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ============ PART 2 · PROJECTS ============ -->
+  <section id="projects">
+    <div class="part"><span class="num">PART 02</span><span class="eyebrow">Hands-on AI</span></div>
+    <h2 class="display"><span>I build with AI, not just about it</span></h2>
+
+    <article class="card project">
+      <div class="media">
+        <video src="https://silvia22-taiwan.github.io/flora/videos/rose.mp4" autoplay muted loop playsinline preload="metadata" aria-label="A rose blooming in Flora"></video>
+      </div>
+      <div class="body">
+        <h3>Flora 🌹</h3>
+        <p class="tagline">Every bloom waits for an open hand.</p>
+        <p>An interactive flower website you control with your hand. Open your palm and the flower blooms; close your fist and it folds back into a bud; wave to switch to the next flower.</p>
+        <div class="box"><b>How it works</b>Hand tracking runs entirely in the visitor's browser with Google's MediaPipe, so the camera feed never leaves their device. No camera? A slider, scroll wheel, or arrow keys work too.</div>
+        <div class="box"><b>How I used AI</b>Built the site with Claude Code, and generated each blooming time-lapse with AI video tools using a first-frame / last-frame method (bud → full bloom) for consistent, realistic motion.</div>
+        <div class="chips"><span>Claude Code</span><span>AI video</span><span>MediaPipe</span><span>JavaScript</span></div>
+        <div class="btns">
+          <a class="pill primary" href="https://silvia22-taiwan.github.io/flora/">Try it live →</a>
+          <a class="pill" href="https://github.com/silvia22-taiwan/flora">View code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card project">
+      <div class="media">
+        <div class="agent" aria-hidden="true">
+          <div class="eyebrow">Example conversation</div>
+          <div class="bubble me">I'm in Tokyo Thu–Sun. Plan my meals this week, under $60.</div>
+          <div class="bubble">Got it! I'll cook the spinach and salmon before Thursday so nothing spoils, and keep the weekend free. Here's your plan…</div>
+        </div>
+      </div>
+      <div class="body">
+        <h3>Meal-planning agent 🥗</h3>
+        <p class="tagline">Plans around your travel, so nothing goes to waste.</p>
+        <p>A conversational agent that plans budget- and spoilage-aware meals around your travel schedule.</p>
+        <div class="box"><b>How I built it</b>RAG + OpenAI API, developed with evaluation discipline: define success criteria → build a 15-scenario evaluation set → find failures and improve responses.</div>
+        <div class="chips"><span>RAG</span><span>OpenAI API</span><span>LLM evaluation</span></div>
+      </div>
+    </article>
+
+    <div class="card" style="padding:22px 26px">
+      <div class="eyebrow">Toolkit</div>
+      <div class="chips" style="margin-bottom:0"><span>Claude Code</span><span>SQL</span><span>RAG / LLM evaluation</span><span>GitHub</span><span>Power BI</span></div>
+    </div>
+  </section>
+
+  <!-- ============ BEYOND ============ -->
+  <section>
+    <div class="eyebrow">Beyond the résumé</div>
+    <h2 class="display"><span>What I bring to your team</span></h2>
+    <div class="beyond">
+      <div class="card">
+        <h3>Three capabilities, each already proven</h3>
+        <ul class="list">
+          <li><b>Customer → roadmap translation.</b> Angible’s AI roadmap, LEGO’s five-year expansion strategy.</li>
+          <li><b>Cross-functional execution at scale.</b> Tesla’s handoff model, P&amp;G’s CRM dashboard rollout.</li>
+          <li><b>Outcomes you can measure.</b> 107% of target, 24% CAGR, 2× online share, +5% retention.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Outside work</h3>
+        <div class="fun">
+          <div><span>🤿</span>Advanced scuba diver</div>
+          <div><span>🍷</span>WSET Level 1 wine taster</div>
+          <div><span>🎹</span>Top-3 city-level pianist</div>
+          <div><span>⚫</span>City champion in Go</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <div class="card contact" id="contact">
+    <h2 class="display"><span>Let’s talk</span></h2>
+    <p>Let’s talk about your team.</p>
+    <div class="links">
+      <a class="pill primary" href="mailto:silvia22@wharton.upenn.edu">silvia22@wharton.upenn.edu</a>
+      <a class="pill" href="https://www.linkedin.com/in/silviaylchen">LinkedIn</a>
+      <a class="pill" href="https://github.com/silvia22-taiwan">GitHub</a>
+    </div>
+  </div>
 
   <footer>© 2026 Silvia Chen · Built with Claude Code</footer>
 </div>
+<script>
+  document.querySelectorAll('#legoThumbs button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#legoThumbs button').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    const img=b.querySelector('img');
+    legoMain.src=img.src; legoMain.alt=img.alt; legoCap.textContent=b.dataset.cap;
+  }));
+</script>
 </body>
 </html>
